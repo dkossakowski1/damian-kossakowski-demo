@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algolia Demo</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8/themes/satellite-min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+
+      <h3>Categories</h3>
+      <div id="categories"></div>
+
+      <h3>Brand</h3>
+      <div id="brand"></div>
+
+      <h3>Price</h3>
+      <div id="price"></div>
+
+      <h3>Rating</h3>
+      <div id="rating"></div>
+
+      <h3>Free Shipping</h3>
+      <div id="free-shipping"></div>
+
+      <div id="clear-refinements"></div>
+    </aside>
+
+    <section class="content">
+      <div class="topbar">
+        <div id="searchbox"></div>
+        <div id="sort-by"></div>
+        <div id="stats"></div>
+      </div>
+
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.72.0/dist/instantsearch.production.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

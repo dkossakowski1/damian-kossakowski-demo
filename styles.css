@@ -1,0 +1,138 @@
+/* Minimal demo layout */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+.wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: 1fr; }
+}
+
+.sidebar h2 { margin: 0 0 12px; }
+.sidebar h3 { margin: 16px 0 8px; font-size: 14px; }
+
+.topbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+#searchbox { flex: 1; min-width: 240px; }
+#stats { font-size: 12px; opacity: 0.7; }
+
+/* Sidebar */
+.sidebar .ais-RefinementList-list {
+  max-height: 220px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+/* 4-across grid */
+.ais-Hits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1200px) { .ais-Hits-list { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .ais-Hits-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px)  { .ais-Hits-list { grid-template-columns: 1fr; } }
+
+/* Product card */
+.hit {
+  border: 1px solid #e5e7eb;
+  border-radius: 0px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.hit img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: transparent;
+  padding: 10px;
+}
+
+#pagination { margin-top: 14px; display: flex; justify-content: center; }
+
+.ais-Hits-item {
+    padding: 0;
+    margin: 0;
+}
+img {
+    background: transparent !important;
+}
+.hit-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    border-radius: 0 !important;
+}
+.pill {
+    padding-right: 10px;
+}
+.rheostat-value,
+.rheostat-tooltip {
+    font-size: 12px;
+}
+.hit-title { 
+  font-weight: 700; 
+  font-size: 14px; 
+  line-height: 1.25; 
+}
+.hit-price { 
+  font-weight: 700; 
+}
+
+.hit-desc { 
+  font-size: 12px; 
+  line-height: 1.25; 
+}
+
+.hit-link{
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 6px;
+  opacity: 0.9;
+}
+
+.hit-link::after{
+  content: "→";
+  transition: transform 150ms ease;
+}
+
+.hit-link:hover::after{
+  transform: translateX(2px);
+}
+
+.hit-rating {
+  padding-top: 6px;
+  padding-bottom: 4px;
+}
+
+.hit-row {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
